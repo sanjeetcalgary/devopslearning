@@ -1,5 +1,5 @@
 # Linux
 ------------------------
-- [Boot Process](Learn_Linux ./BootProcess.md)
+- ***[Boot Process](Linux/Learn_Linux/BootProcess.md)***
 - ***[Directory Structure](http://www.google.com)***
 - ***[Commands](http://www.google.com)***
