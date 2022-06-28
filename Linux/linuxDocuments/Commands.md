@@ -99,4 +99,19 @@ $ ls
  
  ![image](https://user-images.githubusercontent.com/103237142/176220331-c83f68e6-90c1-4379-af31-2db8db9dc7f0.png)
 
-> - 
+> - `$ find /home -iname file.txt` : Find file ignoring cases
+
+ ![image](https://user-images.githubusercontent.com/103237142/176221204-8b3766db-884b-426b-a4ac-ecf6efec9a5e.png)
+
+> - `$ find / -type d -name directoryName` : Find all directories whose name is directoryName in / directory.
+
+> - `$ find / -perm /u=r` : Find all directories whose name is directoryName in / directory.
+ 
+> - `$find / -perm /a=x` : Find all Executable files.
+ 
+> - `$ find . -type f -name "tecmint.txt" -exec rm -f {} \` : To find a single file called tecmint.txt and remove it.
+ 
+> - `$ find . -type f -name "*.txt" -exec rm -f {} \` : To find and remove multiple files such as .txt, then use
+ 
+
+ 
