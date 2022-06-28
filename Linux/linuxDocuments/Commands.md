@@ -93,10 +93,10 @@ $ ls
 ### Find command
 > - `$ find . -name filename.txt` : Find all the files whose name is filename.txt in a current working directory.
      
-     ![image](https://user-images.githubusercontent.com/103237142/176219854-e99fecb0-b62b-4d05-b45a-278c137c3cfb.png)
+ ![image](https://user-images.githubusercontent.com/103237142/176219854-e99fecb0-b62b-4d05-b45a-278c137c3cfb.png)
 
 > - `$ find /home -name filename.txt` : Find all the files under /home directory with the name filename.txt
  
-     ![image](https://user-images.githubusercontent.com/103237142/176220331-c83f68e6-90c1-4379-af31-2db8db9dc7f0.png)
+ ![image](https://user-images.githubusercontent.com/103237142/176220331-c83f68e6-90c1-4379-af31-2db8db9dc7f0.png)
 
 > - 
