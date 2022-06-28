@@ -114,4 +114,39 @@ $ ls
 > - `$ find . -type f -name "*.txt" -exec rm -f {} \` : To find and remove multiple files such as .txt, then use
 ---------------------------------------- 
 
+ ### Grep command : used for searching strings based on pattern in a file
+ If grep command unavailable then install it
+  * `$ apt-get install grep` : in Ubuntu
+  * `$ yum install grep` : in Centos
+ 
+ > - `$ grep 'serachstring' filename` : Search any line that contains the word in filename
+  
+ ![image](https://user-images.githubusercontent.com/103237142/176231378-d6d41d75-bc2e-48fb-890a-649bd4236817.png)
+
+ > - `$ grep -i 'serachstring' filename` : Perform a case-insensitive search for the word
+ 
+ ![image](https://user-images.githubusercontent.com/103237142/176231871-26781c4b-2389-4209-8174-122a8289d1c4.png)
+
+ > - `$ grep -R 'httpd' .` : Look for all files in the current directory and in all of its subdirectories in Linux for the word ‘httpd’
+ 
+ > - `$ grep -c 'nixcraft' frontpage.md' .` : Search and display the total number of times that the string ‘nixcraft’ appears in a file named frontpage.md
+ 
+ ![image](https://user-images.githubusercontent.com/103237142/176233946-a171b6bc-b18b-42b2-a5a8-5df58dfb780c.png)
+
+ > - `$ grep -v 'string' file' .` : Search and display file contents except for the search string
+ 
+ ![image](https://user-images.githubusercontent.com/103237142/176234443-2d50d4e5-be7d-4dcc-8ed0-84d86f38e77d.png)
+
+  > - `$ egrep -i 'string|string' file' .` : used to search two words in a file
+ 
+ ![image](https://user-images.githubusercontent.com/103237142/176234796-63610ff5-4a6b-43f6-a4b2-5dc83bb9fc80.png)
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
  
