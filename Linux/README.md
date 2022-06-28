@@ -4,4 +4,4 @@
 - ***[Directory Structure](linuxDocuments/DirectoryStructure.md)***
 - ***[Commands](linuxDocuments/Commands.md)***
 - ***[VIM](linuxDocuments/Vim_editor.md)***
-
+- ***[Concepts](linuxDocuments/Concepts.md)***
