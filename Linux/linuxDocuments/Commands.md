@@ -71,3 +71,25 @@ $ ls
 | mv <source> <destination>   | move from source to destination |
 | mv -I source dest | Throw warning for overwriting |
 
+### Cat Commands
+| Option | Description |
+| ------ | ----------- |
+| cat /etc/passwd   | display the contents of a file |
+| cat file1 file2  | display multiple file contents |
+| cat >file   | create a file with cat command, provide input and press Ctrl + D |
+| cat file | more | display content more |
+| cat file | less | display content less |
+| cat -n file | display line numbers of file |
+ 
+![image](https://user-images.githubusercontent.com/103237142/176214859-3fc8ef7d-932b-479e-aa33-58100642b95a.png)
+
+![image](https://user-images.githubusercontent.com/103237142/176215043-e4a9fbf5-fb7f-4306-b5de-bfdc69bee3bf.png)
+
+![image](https://user-images.githubusercontent.com/103237142/176215248-731ec5ca-46cd-4578-9fb2-2126e26e67b0.png)
+
+![image](https://user-images.githubusercontent.com/103237142/176215536-841bd086-20cb-4dbb-ba75-5201b7d283f1.png)
+
+
+
+ 
+  
