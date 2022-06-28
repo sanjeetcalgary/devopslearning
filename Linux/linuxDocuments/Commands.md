@@ -89,7 +89,7 @@ $ ls
 
 ![image](https://user-images.githubusercontent.com/103237142/176215536-841bd086-20cb-4dbb-ba75-5201b7d283f1.png)
 
-
+---------------------------------------
 ### Find command
 > - `$ find . -name filename.txt` : Find all the files whose name is filename.txt in a current working directory.
      
@@ -112,6 +112,6 @@ $ ls
 > - `$ find . -type f -name "tecmint.txt" -exec rm -f {} \` : To find a single file called tecmint.txt and remove it.
  
 > - `$ find . -type f -name "*.txt" -exec rm -f {} \` : To find and remove multiple files such as .txt, then use
- 
+---------------------------------------- 
 
  
