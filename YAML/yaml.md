@@ -10,7 +10,7 @@
 >   ![image](https://user-images.githubusercontent.com/103237142/176063242-a466072e-4139-4b74-90cd-65b7b78adb6b.png)
 > - Datatype for key is always string whereas datatype for value can be anything
 > - yaml doesnot support `TAB` identation, we have to use `Spaces`, it can be one or more but it should be uniform throught the document
-> - yaml file starts with three dashes `(---)` 
+> - yaml file starts with three dashes `(---)` and ends with three dashes (---), we can have multiple files in the same 
 > - Comments in yaml document is mentioned with #, it can be inline or separate line
 
 
@@ -30,6 +30,25 @@
 > - Set: Any datatype preceded by ? and set is declared as !!setName
 >   * consists of only unique values
 
+![image](https://user-images.githubusercontent.com/103237142/176082816-ef47f515-d470-4340-b982-3461d9d47fbd.png)
+
+![image](https://user-images.githubusercontent.com/103237142/176082888-2f0a9c61-cc6e-457d-a6d3-892ca43f5a10.png)
+
+![image](https://user-images.githubusercontent.com/103237142/176082952-a7530f86-57ef-45c0-aa64-e5016ee97fdd.png)
+
+![image](https://user-images.githubusercontent.com/103237142/176082980-0ccb3c48-a17f-45c5-b73f-58b369346248.png)
+
+![image](https://user-images.githubusercontent.com/103237142/176083021-e9b348d7-a6d6-44f6-8de7-57059da9dd11.png)
+
 
 ## Anchors and Extensions
-> - 
+> - Feature to identify an item and then reference it elsewhere in file
+> - Anchors are created using the & sign followed alias name
+> - Use this alias name along with * sign to reference the value
+> - Extensions extends the anchor values to add additional values
+
+## Placeholders
+> - YAML placeholders are used to reference variables inside the YAML files
+
+
+
