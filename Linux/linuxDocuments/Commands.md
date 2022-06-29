@@ -156,9 +156,45 @@ and characters count in a files specified by the file arguments
 
 ![image](https://user-images.githubusercontent.com/103237142/176451909-60aecec2-c320-40b3-9f32-2f27ff7c5825.png)
 
+------------------------------------
+### Tee command
+Used to print the output on console and redirect it to a file at the same time
 
- 
- 
+```
+df -h | tee diskusage.txt 
+ -a (--append) - Do not overwrite the files instead append to the given files.
+```
+![image](https://user-images.githubusercontent.com/103237142/176459253-b299530a-ad63-485f-abbc-269ce8490df9.png)
+
+![image](https://user-images.githubusercontent.com/103237142/176459383-2772043e-e8b4-452a-bd3b-c30c747decc4.png)
+
+![image](https://user-images.githubusercontent.com/103237142/176459712-78423d0c-bf71-4b89-b6db-8dca696aee4c.png)
+
+![image](https://user-images.githubusercontent.com/103237142/176459795-577c3cfb-ad1c-4361-b499-f5ff5d056d58.png)
+
+-----------------------------------
+### Cut command
+The cut command is used to extract the specific portion of text in a file
+
+```
+Extract by character
+cut -c1 diskusage.txt : get first character of every line of file 
+cut -c1,2,5 diskusage.txt : get the first, second and fifth character from every line of file
+```
+![image](https://user-images.githubusercontent.com/103237142/176461062-58e37763-f15b-4326-b9e9-a6d1ebf08db3.png)
+
+![image](https://user-images.githubusercontent.com/103237142/176461337-cedc88f0-6c47-4010-96f7-53651e4f3429.png)
+
+```
+Extract by range
+cut -c1-5 diskusage.txt : get the range of characters from 1-5
+cut -c1-5,10-16 diskusage.txt : get the range of characters from 1-5 and 10-16
+```
+![image](https://user-images.githubusercontent.com/103237142/176462832-9bff6420-7e3c-4d4a-9ad5-d4a5960d29c9.png)
+
+![image](https://user-images.githubusercontent.com/103237142/176463037-16827fa3-810b-42ea-82e4-5e6e1e3ee2c8.png)
+
+
  
  
  
