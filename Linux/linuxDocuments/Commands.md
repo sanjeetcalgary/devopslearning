@@ -194,7 +194,46 @@ cut -c1-5,10-16 diskusage.txt : get the range of characters from 1-5 and 10-16
 
 ![image](https://user-images.githubusercontent.com/103237142/176463037-16827fa3-810b-42ea-82e4-5e6e1e3ee2c8.png)
 
+--------------------------------
+### AWK command
+It is used for text processing i.e. used to extract fields from a file or output based on regular expression
 
- 
- 
+```
+awk '{Action}' file_name
+When you want to search for text that has a specific pattern or you're looking for a specific word in the text, the command 
+would look something like this:
+awk '/regex pattern/{action}' your_file_name.txt 
+```
+
+| Option | Description |
+| ------ | ----------- |
+|  $0 | Represents the entire line of text |
+|  $1 | Represents the first field |
+|  $2 | Represents the second field |
+|  $7 | Represents the seventh field |  
+|  $45 | Represents the 45th field |
+|  $NF | Stands for “number of fields,” and represents the last field |
+|  $NR | will give line number |
+
+`awk ‘{print NR, $1}’`
+A BEGIN rule is executed once before any text processing starts. In fact, it’s executed before awk even reads any text. 
+An END rule is executed after all processing has completed. You can have multiple BEGIN and END rules, and they’ll execute in order.
+
+```
+awk 'BEGIN {print "Dennis Ritchie"} {print $0}' dennis_ritchie.txt
+who | awk 'BEGIN {print "Active Sessions"} {print $1,$4}'
+```
+Input separator: If you want awk to work with text that doesn’t use whitespace to separate fields, you have to tell it which character 
+the text uses as the field separator. For example, the /etc/passwd file uses a colon (:) to separate fields.
+We’ll use that file and the -F (separator string) option to tell awk to use the colon (:) as the separator
+
+```
+awk -F: '{print $1,$6}' /etc/passwd
+```
+
+`awk ‘/Jerry/ {print }’ file` : will return lines where Jerry is matched
+`awk ‘{$2=”Kumar”; print $0}’ file` : will replace second column values with Kumar
+`awk ‘length{$0} >15’ file` : will give all lines of length greater than 15
+
+
  
