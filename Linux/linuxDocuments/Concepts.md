@@ -70,4 +70,27 @@ $ chmod [-option]  mode file/directory
       - u =user, g= group, o=other, a=all
       - + = grant, - = remove, = =set      
 ```
+chmod ugo+r file = grant read access to all for a file
+
+```
+chmod u=rw,og=r new_file.txt
+Using the “=” operator means we wipe out any existing permissions and then set the ones specified.
+```
+## Input Output Redirects
+-------------------
+> - Standard Input (stdin)- file description number -0
+    * used to get file contents of a file 
+        + `<` is used as input redirect
+        
+> - Standard output (stdout) - file description number -1
+    * used to redirect console output
+        + Redirect to a file / overwritten `>`
+        + Use the same file or append  `>>`
+    
+> - Standard error (stderr) - file description number -2
+    * used to redirect errors
+        + Using file descriptor i.e. 2 e.g. `telnet localhost 2> errorfile`
+
+
+
 
