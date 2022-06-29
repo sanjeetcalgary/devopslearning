@@ -141,9 +141,21 @@ $ ls
  
  ![image](https://user-images.githubusercontent.com/103237142/176234796-63610ff5-4a6b-43f6-a4b2-5dc83bb9fc80.png)
 
+-------------------------------------
+ ### WC commands
+The wc (word count) command in Unix/Linux operating systems is used to find out number of newline count, word count, byte 
+and characters count in a files specified by the file arguments
+
+`wc -l` : Prints the number of lines in a file.
+
+`wc -w` : prints the number of words in a file.
+
+`wc -m`: prints the count of characters from a file.
  
- 
- 
+`wc -L` : prints only the length of the longest line in a file.
+
+![image](https://user-images.githubusercontent.com/103237142/176451909-60aecec2-c320-40b3-9f32-2f27ff7c5825.png)
+
 
  
  
