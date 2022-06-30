@@ -81,4 +81,22 @@ Repository: It is the .git folder, so when we commit the changes are pushed to .
   ![image](https://user-images.githubusercontent.com/103237142/176704548-69475fc4-787b-47c6-903a-a33e853d77d0.png)
 
 
+## gitignore
+------------------
+We can tell Git which files or directories to ignore in a given repository using .gitignore file. This is used for files which 
+you never want to commit like secret key files, API keys, Credentials, Operating system files, log files, dependencies and packages.
+
+- Create a file called .gitignore in the root of a repository. Inside the file, we can write patterns to tell git which files and 
+  directories to exclude from tracking/ commit
+- Foldername/ will ignore entire directory
+- `*.log` will any file with .log extension
+
+![image](https://user-images.githubusercontent.com/103237142/176705207-cc8dd6c4-fd29-44b5-b4d9-35e11968b487.png)
+
+![image](https://user-images.githubusercontent.com/103237142/176705228-c96638df-168c-4690-b0aa-e964d62bc360.png)
+
+![image](https://user-images.githubusercontent.com/103237142/176705267-324899c8-d987-408f-81e0-58eb2eeb919b.png)
+
+
+
 
