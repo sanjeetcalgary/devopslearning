@@ -39,6 +39,27 @@ Whenever you encounter merge conflicts, follow the steps to resolve them:
   
   ![image](https://user-images.githubusercontent.com/103237142/176710776-ffc523a6-29f1-4bb9-8c01-97d4837d4cd3.png)
 
+## Stashing
+----------------------------
+- Often, when you’ve been working on part of your project, things are in a messy state and you want to switch branches for a bit to 
+  work on something else. The problem is, you don’t want to do a commit of half-done work just so you can get back to this point later. 
+  The answer to this issue is the git stash command.
+  
+- Stashing takes the dirty state of your working directory — that is, your modified tracked files and staged changes — and saves it on 
+  a stack of unfinished changes that you can reapply at any time (even on a different branch).
+  
+- When there is no conflict, git allows to bring the work along to new branch (switching) but when there is conflict , git will not allow 
+  you to switch branch. In that case if you are not ready to commit, we stash it
+  
+- Stash pop is used to remove the most recently stashed changes in your stash and re-apply them to your working copy
+
+  ![image](https://user-images.githubusercontent.com/103237142/176712310-df2e5032-9387-455a-91ba-5f0f087a69ec.png)
+
+  ![image](https://user-images.githubusercontent.com/103237142/176712339-8d529fd6-af3f-41a5-bc2a-e0bbd65d5fb1.png)
+
+- To remove/delete stash, we use stash drop stash_id
+  
+  ![image](https://user-images.githubusercontent.com/103237142/176712490-278b2c42-c299-4dd7-a29a-943f5ded5f72.png)
 
 
 
