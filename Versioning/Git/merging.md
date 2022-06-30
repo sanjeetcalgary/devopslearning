@@ -84,3 +84,21 @@ Whenever you encounter merge conflicts, follow the steps to resolve them:
 
     ![image](https://user-images.githubusercontent.com/103237142/176719282-b3d8e603-ecff-4d82-aa16-4c5073a68220.png)
 
+- Restore: Suppose you made some changes to a file and added to staging, but you realised you have made some mistake and you 
+           dont want to commit the changes, use restore to roll back from staging
+  
+    ![image](https://user-images.githubusercontent.com/103237142/176719985-5aec0cd1-47a3-47e0-8836-d63bc6e5b39f.png)
+
+- Reset: You can reset repo to a specific commit time
+  
+    ![image](https://user-images.githubusercontent.com/103237142/176720431-4136d5f7-530f-492a-9aa4-0b735646e683.png)
+
+    ![image](https://user-images.githubusercontent.com/103237142/176720504-10ff32e6-d4be-45cd-9ac7-8f9f2476fb90.png)
+
+    Now , we want repo to reset to second commit
+    Get the commit ID and reset
+    
+    ![image](https://user-images.githubusercontent.com/103237142/176720779-b2c5dc45-befa-48e0-9fba-f8102e42d4f7.png)
+
+    ![image](https://user-images.githubusercontent.com/103237142/176720829-0362e73a-7534-440d-ad72-a9a95cf99651.png)
+
