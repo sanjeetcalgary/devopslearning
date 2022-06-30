@@ -62,3 +62,23 @@ Repository: It is the .git folder, so when we commit the changes are pushed to .
    ![image](https://user-images.githubusercontent.com/103237142/176702560-48f9f964-74b7-41b1-9a3f-7c3169d07d83.png)
 
    Now add and commit
+
+
+## log
+------------------
+`$ git log` : It retrieves the log for commits for the selected repository
+
+![image](https://user-images.githubusercontent.com/103237142/176703227-8caa509c-20ca-46fa-814e-7c94591404de.png)
+
+## Amending Commit
+--------------
+- Process of redoing last commit, if any mistake is made `(Note: this is applicable only for the last commit)` 
+  it’s a way to make any changes in last commit
+- amend command will redo the previous commit
+
+  ![image](https://user-images.githubusercontent.com/103237142/176704302-ec30a89a-4e17-484e-91c6-8186b8856842.png)
+  
+  ![image](https://user-images.githubusercontent.com/103237142/176704548-69475fc4-787b-47c6-903a-a33e853d77d0.png)
+
+
+
