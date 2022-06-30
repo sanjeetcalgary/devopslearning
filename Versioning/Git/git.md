@@ -97,6 +97,43 @@ you never want to commit like secret key files, API keys, Credentials, Operating
 
 ![image](https://user-images.githubusercontent.com/103237142/176705267-324899c8-d987-408f-81e0-58eb2eeb919b.png)
 
+## Branching
+--------------------
+**HEAD** : HEAD is a pointer that refers to the current location in your repository. It points to particular branch reference, kind of a bookmark
+![image](https://user-images.githubusercontent.com/103237142/176705889-924f3d4f-a5d8-4728-8f78-df8ed8d12926.png)
+
+`git branch` : view all existing branches in the repo, active branch has asterisk `(*)` sign
+
+![image](https://user-images.githubusercontent.com/103237142/176706112-7da520bd-fee2-47fe-94c6-0f2c8b74f927.png)
+
+`git branch branchName` : will create a new branch
+
+`git switch branchName` : used to switch to other branches, git checkout <branch> can also be used for the same
+ 
+ ![image](https://user-images.githubusercontent.com/103237142/176706357-0304eae6-84f8-4e40-9a3b-abc000a02d38.png)
+
+ `git switch -c branchName` : this will create and switch to new branch in single step
+ 
+```
+Switching branches with unstaged changes: error: Your local changes to the following files would be overwritten by checkout:
+```
+![image](https://user-images.githubusercontent.com/103237142/176706670-cfd57c88-969e-4f88-95f1-542809649501.png)
+
+```
+Deleting and renaming braches: You cannot delete a branch if you are currently on the branch, or when that branch is not yet merged. 
+Though you can use force delete option (-D)
+```
+![image](https://user-images.githubusercontent.com/103237142/176706913-85a33e44-3a6c-4c3f-acd8-601c8db558c3.png)
+
+![image](https://user-images.githubusercontent.com/103237142/176706943-50db5b26-8f6e-4b63-ac23-5089487ec708.png)
+
+   
+To rename a branch, go to the branch and then use 
+`git branch -m newName`
+
+![image](https://user-images.githubusercontent.com/103237142/176707317-f97615b3-b73b-4586-87e9-50b1a6239144.png)
+
+   
 
 
 
