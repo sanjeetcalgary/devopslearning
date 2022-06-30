@@ -39,3 +39,10 @@ Process of creating a local copy of an existing repository, we just need URL to 
 ![image](https://user-images.githubusercontent.com/103237142/176727702-a3a49658-ea61-45d9-a9a1-8f31b8f550ff.png)
 
 
+## Moving existing local repo to github
+--------------------------
+> Step-1: Create a new repo in github
+> Step-2: Connect your local repo – remote
+> Step-3: o	Push your changes to github
+
+
