@@ -27,3 +27,15 @@ without having to supply your credentials everytime
 
   ![image](https://user-images.githubusercontent.com/103237142/176727176-a8d3a833-da23-421c-b831-a76be070526c.png)
 
+
+## Clone
+---------------------
+Process of creating a local copy of an existing repository, we just need URL to clone
+**NOTE**: Make sure you are not inside of a repo when you clone!
+
+`git clone url` : Git will retrieve all the associated files of repo, git will initialise a new repository on your machine 
+  giving u access to full git history of the cloned project
+ 
+![image](https://user-images.githubusercontent.com/103237142/176727702-a3a49658-ea61-45d9-a9a1-8f31b8f550ff.png)
+
+
