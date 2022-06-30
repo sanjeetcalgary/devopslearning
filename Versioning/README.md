@@ -29,7 +29,7 @@ Sublime: `git config --global core.editor "'C:\Program Files\Sublime Text 3\subl
 
 ## Git & Github
 ------------------
-> - Init & Status
+> - [Init & Status](http://www.google.com)
 > - .git
 > - Workflow
 > - Log
