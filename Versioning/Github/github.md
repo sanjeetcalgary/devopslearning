@@ -45,6 +45,37 @@ Process of creating a local copy of an existing repository, we just need URL to 
 
 > Step-2: Connect your local repo – remote
 
-> Step-3: o	Push your changes to github
+> Step-3: Push your changes to github
 
+- Create a new repo in github
+
+  ![image](https://user-images.githubusercontent.com/103237142/176729632-a8a18d9d-367e-4b70-aa15-f19aef62d392.png)
+
+- Go to local working repo directory
+
+  ![image](https://user-images.githubusercontent.com/103237142/176729769-baae1c72-88a3-4b32-bad7-f493237d661d.png)
+
+- Connect using remote
+  Remote: It is combination of a name and url, name can be anything but industry prefers ***"origin"***
+  `git remote -v` : used to check current remote associated with local directory
+  
+  `git remote add name url` : used to establish remote connection between local directory and github repo
+  
+  ![image](https://user-images.githubusercontent.com/103237142/176730279-bb1cc66d-2095-45b6-b461-84e72d3b7114.png)
+
+  ![image](https://user-images.githubusercontent.com/103237142/176730321-f9409b2d-30b4-4b24-a629-b694ee634a39.png)
+
+- Push to github
+  `git push origin githubBranch` : uswed to push the local repo to github repo, however due to naming we might get `refspec` issue
+  
+  ```
+   ![image](https://user-images.githubusercontent.com/103237142/176731070-05c9cfc7-729b-4169-879b-449da2210b92.png)
+  
+   To solve this problem, `git show-ref`- this will show where HEAD is pointing to and use that
+   ![image](https://user-images.githubusercontent.com/103237142/176731296-d00d9d71-21c6-4a80-bb64-1a0e454e8d12.png)
+
+   git push origin HEAD:master => git push origin HEAD:main
+
+  '''
+  ![image](https://user-images.githubusercontent.com/103237142/176731511-5526fca1-4780-4c24-8bf1-1be32f3fdfbc.png)
 
