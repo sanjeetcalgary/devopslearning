@@ -42,5 +42,4 @@ Sublime: `git config --global core.editor "'C:\Program Files\Sublime Text 3\subl
 > - [Local repo to github](Github/github.md)
 > - [Github repo to local](Github/github.md)
 > - [Github fetch and pull](Github/Fetch&Pull.md)
-> - [ReadMe](Git/merging.md)
 
