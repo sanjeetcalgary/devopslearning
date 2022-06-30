@@ -30,13 +30,13 @@ Sublime: `git config --global core.editor "'C:\Program Files\Sublime Text 3\subl
 ## Git & Github
 ------------------
 > - [Init & Status](Git/git.md)
-> - .git
-> - Workflow
-> - Log
-> - gitIgnore
-> - Branching
-> - Branch Merging
-> - Stash
+> - [.git](Git/git.md)
+> - [Workflow](Git/git.md)
+> - [Log](Git/git.md)
+> - [gitIgnore](Git/git.md)
+> - [Branching](Git/git.md)
+> - [Branch Merging](Git/git.md)
+> - [Stash](Git/git.md)
 > - SSH
 > - Clone
 > - Local repo to github
