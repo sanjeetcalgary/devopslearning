@@ -4,7 +4,7 @@ This repo will host all articles needed to learn devops
 ----------------------------------------------
 - **[Linux](Linux/README.md)** - All about linux operating system
 - **[Bash Scripting](http://www.yahoo.com)** - All about bash scripting
-- **[Git & Github](http://www.yahoo.com)** - All about version control
+- **[Git & Github](Versioning/README.md)** - All about version control
 - **[Docker](http://www.yahoo.com)** - All about docker and containers
 - **[YAML](YAML/yaml.md)** - All about yaml
 - **[Kubernetes](http://www.yahoo.com)** - All about kubernetes
