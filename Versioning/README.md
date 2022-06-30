@@ -37,8 +37,9 @@ Sublime: `git config --global core.editor "'C:\Program Files\Sublime Text 3\subl
 > - [Branching](Git/git.md)
 > - [Branch Merging](Git/merging.md)
 > - [Stash](Git/merging.md)
-> - SSH
-> - Clone
-> - Local repo to github
-> - Github repo to local
-> - ReadMe
+> - [SSH](Git/merging.md)
+> - [Clone](Git/merging.md)
+> - [Local repo to github](Git/merging.md)
+> - [Github repo to local](Git/merging.md)
+> - [ReadMe](Git/merging.md)
+
