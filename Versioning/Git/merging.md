@@ -61,5 +61,26 @@ Whenever you encounter merge conflicts, follow the steps to resolve them:
   
   ![image](https://user-images.githubusercontent.com/103237142/176712490-278b2c42-c299-4dd7-a29a-943f5ded5f72.png)
 
+## Undoing changes (Time travel)
+--------------
+- Detached mode: Suppose we want to check how the repo looked after some specific commit, or you want to retrieve something from that commit
+  + Using `git log` find the commit id where you want to go and copy first 4-5 characters
+    
+    ![image](https://user-images.githubusercontent.com/103237142/176718120-485005b9-82a8-423b-bd44-e2b12260670c.png)
+    
+    ![image](https://user-images.githubusercontent.com/103237142/176718714-092f8f4f-4dbf-4113-ab88-8f78fd02509c.png)
 
+  + Using `git checkout commitId` go in detached head mode to check out
+  
+    ![image](https://user-images.githubusercontent.com/103237142/176718883-3cc50c99-e912-4841-babe-2a44f40392b7.png)
+    
+    Now, we can check the files
+    
+    ![image](https://user-images.githubusercontent.com/103237142/176718983-3cba6f2c-b5b9-4ef0-a6a1-4cce06abadb2.png)
+
+   + You can check the work, to come out of detached mode, switch branch
+   
+    ![image](https://user-images.githubusercontent.com/103237142/176719186-31e00827-ef56-4e11-a83f-97d422a1c9f6.png)
+
+    ![image](https://user-images.githubusercontent.com/103237142/176719282-b3d8e603-ecff-4d82-aa16-4c5073a68220.png)
 
