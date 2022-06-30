@@ -70,6 +70,8 @@ Repository: It is the .git folder, so when we commit the changes are pushed to .
 
 ![image](https://user-images.githubusercontent.com/103237142/176703227-8caa509c-20ca-46fa-814e-7c94591404de.png)
 
+**NOTE: To come out of log, type q**
+
 ## Amending Commit
 --------------
 - Process of redoing last commit, if any mistake is made `(Note: this is applicable only for the last commit)` 
