@@ -67,8 +67,7 @@ Process of creating a local copy of an existing repository, we just need URL to 
 
 - Push to github
   `git push origin githubBranch` : uswed to push the local repo to github repo, however due to naming we might get `refspec` issue
-  
-  ```
+
    ![image](https://user-images.githubusercontent.com/103237142/176731070-05c9cfc7-729b-4169-879b-449da2210b92.png)
   
    To solve this problem, `git show-ref`- this will show where HEAD is pointing to and use that
@@ -76,6 +75,5 @@ Process of creating a local copy of an existing repository, we just need URL to 
 
    git push origin HEAD:master => git push origin HEAD:main
 
-  '''
   ![image](https://user-images.githubusercontent.com/103237142/176731511-5526fca1-4780-4c24-8bf1-1be32f3fdfbc.png)
 
