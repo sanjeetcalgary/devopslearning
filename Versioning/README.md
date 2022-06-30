@@ -25,5 +25,5 @@ VSCode: `git config --global core.editor "code --wait"`
 
 Notepad++: `git config --global core.editor "'C:\Program Files\Notepad\notepad.exe' -multiInst -notabbar -nosession -noPlugin" `
 
-Sublime: git config --global core.editor "'C:\Program Files\Sublime Text 3\sublime_text.exe' -w"
+Sublime: `git config --global core.editor "'C:\Program Files\Sublime Text 3\sublime_text.exe' -w"`
 
