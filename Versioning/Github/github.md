@@ -77,3 +77,31 @@ Process of creating a local copy of an existing repository, we just need URL to 
 
   ![image](https://user-images.githubusercontent.com/103237142/176731511-5526fca1-4780-4c24-8bf1-1be32f3fdfbc.png)
 
+
+## Cloning github repo to local 
+---------------------
+> Step-1: Use existing repo from github
+
+> Step-2: Clone it to local
+
+> Step-3: Do some work locally
+
+> Step-4: Push your changes to github
+
+- Clone repo
+
+  ![image](https://user-images.githubusercontent.com/103237142/176732362-4ea90f42-9ba5-4ffa-9909-54e6fb240dbe.png)
+
+
+- Perform task locally
+
+  ![image](https://user-images.githubusercontent.com/103237142/176732493-1bdbef66-7bd5-424e-adbf-bd157b0cc5d0.png)
+
+- Commit and Push to github
+
+  ![image](https://user-images.githubusercontent.com/103237142/176732609-45044753-512e-478a-828a-8ecc6ba07036.png)
+
+  ![image](https://user-images.githubusercontent.com/103237142/176732639-2677130a-0a5a-4a26-91f3-05279fa8415f.png)
+
+
+  
