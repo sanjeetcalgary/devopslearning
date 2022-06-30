@@ -42,7 +42,9 @@ Process of creating a local copy of an existing repository, we just need URL to 
 ## Moving existing local repo to github
 --------------------------
 > Step-1: Create a new repo in github
+
 > Step-2: Connect your local repo – remote
+
 > Step-3: o	Push your changes to github
 
 
