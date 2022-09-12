@@ -1,4 +1,0 @@
-# Architecture
--------------------------
-## Application architecture
---------------------
