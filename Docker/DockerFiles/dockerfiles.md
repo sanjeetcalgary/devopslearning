@@ -83,4 +83,12 @@ COPY is used to copy files or directories from source host filesystem to a desti
 
 ![image](https://user-images.githubusercontent.com/103237142/190288791-280d809f-648c-4ea6-a5a3-1478024b86d3.png)
 
+<img width="486" alt="image" src="https://user-images.githubusercontent.com/103237142/190534680-8501acb2-6155-4fc6-9897-9b3028843c92.png">
 
+<img width="406" alt="image" src="https://user-images.githubusercontent.com/103237142/190534717-9ff7263b-6169-464c-bd88-40ce71583666.png">
+
+<img width="732" alt="image" src="https://user-images.githubusercontent.com/103237142/190534774-5b77a175-c191-4d66-ba82-29ce904d0e1c.png">
+
+<img width="946" alt="image" src="https://user-images.githubusercontent.com/103237142/190534797-3f07d999-9fc5-45f8-bad6-a53a8f10bf2a.png">
+
+**Note:** Used code is @ 
