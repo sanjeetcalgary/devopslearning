@@ -93,4 +93,89 @@ COPY is used to copy files or directories from source host filesystem to a desti
 
 **Note:** Used code is @ Docker/Concept/mycode.zip
 
+ADD
+-------------------------
+ADD is used to add files or directories and remote files from URL from source host filesystem to a destination in the container file system
+
+- This command also copies one or more files/directories from the docker host into image
+- It can also extract TAR files from the docker host into docker image and download files from a URL and copy them into the docker image
+- It eliminates the need for untar and download utilities like wget and curl
+
+![image](https://user-images.githubusercontent.com/103237142/190536440-e7c5507f-301a-4c6f-8554-61a4cf58d050.png)
+
+![image](https://user-images.githubusercontent.com/103237142/190536452-a39d8b52-a7c0-48e2-ac07-e07501007a3f.png)
+
+_Task:_
+
+Download the code from github as zip >> try to run without unzip
+
+<img width="528" alt="image" src="https://user-images.githubusercontent.com/103237142/190539309-20cef732-de4f-4973-bef4-91d2fbfbfed9.png">
+
+Now change the dockerfile
+
+<img width="630" alt="image" src="https://user-images.githubusercontent.com/103237142/190539349-43e1c07d-4c9a-4eb1-a86c-176354536784.png">
+
+```
+FROM ubuntu
+RUN apt-get update && apt-get install -y curl apache2 unzip
+# Add works similar to copy but it can download from internet and paste
+# like we can download the code or artifacts hosted on github
+# lets say our code is at https://github.com/mdn/beginner-html-site-styled
+# from here lets take the zip url i.e. right click on ZIp and copy link address: https://github.com/mdn/beginner-html-site-styled/archive/refs/heads/gh-pages.zip
+# to customize the path we can give any name like mypage with extemntion
+ADD https://github.com/mdn/beginner-html-site-styled/archive/refs/heads/gh-pages.zip /var/www/html/mypage.zip
+# since the code is zip, so unzip and copy in directory- download unzip and move the code to source directory
+# here * means all files
+# summary: download from github as zip >> unzip it >> move to source folder
+RUN cd /var/www/html/ && unzip mypage.zip && mv /var/www/html/beginner-html-site-styled-gh-pages/* /var/www/html
+# provide the permission to execute
+RUN chmod +x /var/www/html
+# now start the httpd service
+CMD apachectl -DFOREGROUND
+
+```
+<img width="718" alt="image" src="https://user-images.githubusercontent.com/103237142/190540869-9d255c96-4ec2-4d3e-ad6d-eed91f99a852.png">
+
+ENV:
+----------------
+ENV sets the environment variables for the subsequent instructions in the build stage. Consider the below example where we define the environment variable workdirectory and we used that later with $. There are two forms: single and multiple values
+
+<img width="274" alt="image" src="https://user-images.githubusercontent.com/103237142/190541118-f3cac806-304e-4d1e-a75a-ef16a102185b.png">
+
+- To supply environment variables to the image; aka runtime variables
+- ARG is compile time variable, ENV is runtime variable
+- ENV values can be overridden when starting a container using -e flag or –env
+
+![image](https://user-images.githubusercontent.com/103237142/190541270-2be10ece-24f2-4017-a5dd-a1f039cb9967.png)
+
+![image](https://user-images.githubusercontent.com/103237142/190541288-1cd36ac4-46d7-40f7-aa78-1277a55fe8c4.png)
+
+![image](https://user-images.githubusercontent.com/103237142/190541301-39aede6e-c20e-4969-96fa-34a969543bc6.png)
+
+**Task:**
+
+```
+FROM ubuntu
+RUN apt-get update && apt-get install -y curl apache2 unzip
+# environment variable
+# ENV VAR_NAME VAR_VALUE and it is referenced using $VAR_NAME
+ENV HTML beginner-html-site-styled
+ADD https://github.com/mdn/$HTML/archive/refs/heads/gh-pages.zip /var/www/html/mypage.zip
+# since the code is zip, so unzip and copy in directory- download unzip and move the code to source directory
+# here * means all files
+# summary: download from github as zip >> unzip it >> move to source folder
+RUN cd /var/www/html/ && unzip mypage.zip && mv /var/www/html/$HTML-gh-pages/* /var/www/html
+RUN echo $HTML > /var/www/html/env.html
+# provide the permission to execute
+RUN chmod +x /var/www/html
+# now start the httpd service
+CMD apachectl -DFOREGROUND
+
+```
+
+<img width="835" alt="image" src="https://user-images.githubusercontent.com/103237142/190544659-78de1892-2228-45dd-8d62-9dba947cfc46.png">
+
+<img width="807" alt="image" src="https://user-images.githubusercontent.com/103237142/190544699-64471cd4-0ab1-46ff-b37a-94b54051ab7a.png">
+
+
 
