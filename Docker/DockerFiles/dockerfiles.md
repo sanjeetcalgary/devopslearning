@@ -177,5 +177,72 @@ CMD apachectl -DFOREGROUND
 
 <img width="807" alt="image" src="https://user-images.githubusercontent.com/103237142/190544699-64471cd4-0ab1-46ff-b37a-94b54051ab7a.png">
 
+WORKDIR:
+---------------------
+WORKDIR sets the working directory for all the consecutive commands. we can have multiple WORKDIR commands and will be appended with a relative path. Consider the following example where we have two WORKDIR commands leads to /usr/node/app
 
+```
+# from base image node
+FROM node:8.11-slim
+
+WORKDIR /usr/node
+WORKDIR app
+
+RUN pwd
+
+# command executable and version
+ENTRYPOINT ["node"]
+```
+
+Used to set default working directory for the container. Similar to cd in the container If the directory specified doesn’t exist, it will be created and cd to it
+
+![image](https://user-images.githubusercontent.com/103237142/190837453-7b25a794-d6ee-470c-9452-b371241c57ef.png)
+
+```
+FROM ubuntu
+RUN apt-get update && apt-get install -y curl apache2 unzip
+ENV HTML beginner-html-site-styled
+# Workdir=> will CD to this location
+WORKDIR /var/www/html/
+#ADD https://github.com/mdn/$HTML/archive/refs/heads/gh-pages.zip /var/www/html/mypage.zip
+# even this line can be modified
+ADD https://github.com/mdn/$HTML/archive/refs/heads/gh-pages.zip ./mypage.zip
+# RUN cd /var/www/html/ && unzip mypage.zip && mv /var/www/html/$HTML-gh-pages/* /var/www/html
+# RUN echo $HTML > /var/www/html/env.html
+# the above line can be rewritten in WORKDIR terms, . means current directory
+RUN unzip mypage.zip && mv $HTML-gh-pages/* . && echo $HTML > ./env.html
+# provide the permission to execute
+RUN chmod +x /var/www/html
+# now start the httpd service
+CMD apachectl -DFOREGROUND
+
+```
+
+<img width="457" alt="image" src="https://user-images.githubusercontent.com/103237142/190838032-e903789a-85f1-47fa-825b-c667cebfa964.png">
+
+<img width="771" alt="image" src="https://user-images.githubusercontent.com/103237142/190838038-77688267-c0c1-4283-b92e-ab197f747f51.png">
+
+<img width="724" alt="image" src="https://user-images.githubusercontent.com/103237142/190838049-e658cf76-168e-4603-a108-794156f57da9.png">
+
+LABELS
+-------------------------
+LABEL is used to add some metadata to the image. if we use the same label as the base image and the most recent label value is applied.
+
+Defines name and email of image creator; mention author’s name i.e. it adds metadata to image. It is a key-value pair, to include spaces within label values use quotesand backslash (\) for multiplines It is deprecated , now its called as LABEL
+
+![image](https://user-images.githubusercontent.com/103237142/190838091-fe54d617-ffd7-438f-a484-e58274f6c36b.png)
+
+```
+
+# from base image node
+FROM node:8.11-slim
+LABEL "about"="This file is just am example to demonstarte the LABEL"
+ENV workdirectory /usr/node
+WORKDIR $workdirectory
+WORKDIR app
+COPY package.json .
+RUN ls -ll
+# command executable and version
+ENTRYPOINT ["node"]
+```
 
