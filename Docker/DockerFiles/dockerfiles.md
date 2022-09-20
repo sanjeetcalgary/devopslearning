@@ -246,3 +246,96 @@ RUN ls -ll
 ENTRYPOINT ["node"]
 ```
 
+Note:
+
+```
+Going inside of a running container:
+
+$ docker exec -it (interactive) <nameofContainer> bash
+
+Changing ownership:
+chown <newuser>:<applicaion> directory -R
+```
+
+```
+FROM ubuntu
+RUN apt-get update && apt-get install -y curl apache2 unzip
+LABEL obj=checking_for_ownership
+ENV HTML beginner-html-site-styled
+WORKDIR /var/www/html/
+ADD https://github.com/mdn/$HTML/archive/refs/heads/gh-pages.zip ./mypage.zip
+RUN unzip mypage.zip && mv $HTML-gh-pages/* . && echo $HTML > ./env.html
+# Add user & Change the file ownership- chown user:group directory -R
+RUN useradd apiserver && chown apiserver:apiserver /var/www/html -R
+# Switch to the added user
+USER apiserver
+# remove file we dont need
+RUN rm -rf mypage.zip $HTML-gh-pages/
+#RUN chmod +x /var/www/html
+USER root
+CMD apachectl -DFOREGROUND
+```
+
+<img width="726" alt="image" src="https://user-images.githubusercontent.com/103237142/191137673-94c917b5-3817-42ce-b64a-2c87802248e7.png">
+
+ARGS
+-----------------------
+ARG is used to pass some arguments to consecutive instructions and this is only command other than a comment can be used before FROM. We can see ARG usage in the below file and also we can pass that with the build command.
+
+To supply arguments while building image; aka build-time variables; If docker file expects ARG variables but none is provided docker will throw error, to avoid that always give default values ARG values can be inspected after image built by using docker history of that image
+
+It’s value is passed in build command as 
+
+![image](https://user-images.githubusercontent.com/103237142/191140878-0e63dbfe-3175-4809-870e-51189a9a17ba.png)
+
+![image](https://user-images.githubusercontent.com/103237142/191140889-10f24da2-d95d-4d69-b86f-dfc320010312.png)
+
+![image](https://user-images.githubusercontent.com/103237142/191140901-a44dae1c-70e3-41bc-82b0-724b27fccb1e.png)
+
+```
+# from base image node
+ARG NODE_VERSION=8.11-slim
+FROM node:$NODE_VERSION
+LABEL "about"="This file is just am example to demonstarte the LABEL"
+ENV workdirectory /usr/node
+WORKDIR $workdirectory
+WORKDIR app
+COPY package.json .
+RUN ls -ll &&\
+    npm install
+ADD index.js .
+RUN ls -l
+# command executable and version
+ENTRYPOINT ["node"]
+```
+
+```
+# basically ARGS can be used to pass dynamic values to docker file
+# syntax: ARG <var>=<defaultvalue>-- this is the value used when value is not passed
+# its value is referenced as $varName
+FROM ubuntu
+ARG user=apiserver
+RUN apt-get update && apt-get install -y curl apache2 unzip
+LABEL obj=checking_for_ownership
+ENV HTML beginner-html-site-styled
+WORKDIR /var/www/html/
+ADD https://github.com/mdn/$HTML/archive/refs/heads/gh-pages.zip ./mypage.zip
+RUN unzip mypage.zip && mv $HTML-gh-pages/* . && echo $HTML > ./env.html
+# Add user & Change the file ownership- chown user:group directory -R
+RUN useradd $user && chown $user:$user /var/www/html -R
+# Switch to the added user
+USER $user
+# remove file we dont need
+RUN rm -rf mypage.zip $HTML-gh-pages/
+#RUN chmod +x /var/www/html
+USER root
+CMD apachectl -DFOREGROUND
+```
+
+While building dokcer image: `$ docker build -t apache:v1.0 . --buiild-arg <varName>=<value> .`
+
+
+
+
+
+
