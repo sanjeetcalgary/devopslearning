@@ -334,7 +334,55 @@ CMD apachectl -DFOREGROUND
 
 While building dokcer image: `$ docker build -t apache:v1.0 . --buiild-arg <varName>=<value> .`
 
+CMD
+---------------------
+CMD command is used to give the default commands when the image is instantiated, it doesn’t execute while build stage. There should be only one CMD per Dockerfile, you can list multiple but the last one will be executed.
 
+Command that runs when container starts; used to give default command to be run when starting the container not during image build like RUN. There can be only one CMD instruction per docker file, if you give more than one then only the last CMD will work. We can check the default CMD of an image using docker inspect
+
+<img width="329" alt="image" src="https://user-images.githubusercontent.com/103237142/191148995-fa22704c-dac5-4b1a-a4be-697851bf20d5.png">
+
+```
+# from base image node
+FROM node:8.11-slim
+
+# command executable and version
+CMD ["node","-v"]
+CMD ["node"]
+```
+
+* Adding a bach file in Dockerfile and execute it
+
+```
+#!/bin/bash
+
+echo "starting httpd"
+apachectl -DFOREGROUND
+
+
+# in script file $? means last process status
+FROM ubuntu
+ARG user=apiserver
+RUN apt-get update && apt-get install -y curl apache2 unzip
+LABEL obj=checking_for_ownership
+ENV HTML beginner-html-site-styled
+WORKDIR /var/www/html/
+ADD https://github.com/mdn/$HTML/archive/refs/heads/gh-pages.zip ./mypage.zip
+RUN unzip mypage.zip && mv $HTML-gh-pages/* . && echo $HTML > ./env.html
+RUN useradd $user && chown $user:$user /var/www/html -R
+USER $user
+RUN rm -rf mypage.zip $HTML-gh-pages/
+USER root
+# copy my script to / means root
+COPY myscript.sh /myscript.sh
+# give executable permission for this script
+RUN chmod +x /myscript.sh 
+CMD /myscript.sh 
+
+```
+<img width="767" alt="image" src="https://user-images.githubusercontent.com/103237142/191153663-56419d22-8537-4920-89de-4da4091112da.png">
+
+<img width="765" alt="image" src="https://user-images.githubusercontent.com/103237142/191153872-24b36de7-eea0-40cd-8801-d0293fe74099.png">
 
 
 
