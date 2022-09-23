@@ -384,6 +384,41 @@ CMD /myscript.sh
 
 <img width="765" alt="image" src="https://user-images.githubusercontent.com/103237142/191153872-24b36de7-eea0-40cd-8801-d0293fe74099.png">
 
+Context means current directory
+
+dockerignore
+---------------------------
+Used to ignore files (in the current context) in the process of making image.
+
++ create a file .dockerignore
++ Just paste the directory or file names in the .dockerignore file
++ This is will make docker to ignore these directory/files while building images in current context
+
+```
+To avoid pop-ups while creating docker image , add in dockerfile
+
+ARG DEBIAN_FRONTEND=noninteractive
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
