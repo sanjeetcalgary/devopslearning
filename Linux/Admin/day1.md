@@ -58,4 +58,49 @@ $PATH: it has binaries for executables so if we keep any script in the bin direc
 
 <img width="456" alt="image" src="https://user-images.githubusercontent.com/103237142/191866050-01b3ba65-aee3-4487-aa8e-c3ebcb9d2ff7.png">
 
+<img width="516" alt="image" src="https://user-images.githubusercontent.com/103237142/192057947-90970cb4-e4f5-42ee-aac6-39038551575c.png">
+
+<img width="473" alt="image" src="https://user-images.githubusercontent.com/103237142/192058028-dc0e0fbc-717e-4a8c-8bcc-0e32a3740f7b.png">
+
+<img width="415" alt="image" src="https://user-images.githubusercontent.com/103237142/192058521-ba81a289-9369-42b8-80d0-1ef23c730e7e.png">
+
+```
+#!/bin/bash
+cat /etc/ubuntu-release
+uptime
+date
+umeek
+```
+
+<img width="398" alt="image" src="https://user-images.githubusercontent.com/103237142/192059061-1e737ef3-eb0a-4d28-93f5-09516a28a667.png">
+
+<img width="437" alt="image" src="https://user-images.githubusercontent.com/103237142/192059249-8d530b9c-3f48-47bc-90bc-6a64d3420d26.png">
+
+Permissions
+---------------------------
+
+<img width="681" alt="image" src="https://user-images.githubusercontent.com/103237142/192059659-29341bdb-73c0-4c90-9bf9-1f0386eb9a7b.png">
+
+<img width="655" alt="image" src="https://user-images.githubusercontent.com/103237142/192059882-211d84b6-b96d-454a-b3d2-a235e0611af0.png">
+
+<img width="649" alt="image" src="https://user-images.githubusercontent.com/103237142/192060080-5cb560ef-c26e-49a2-ba01-e688afaa0672.png">
+
+```
+Check user's group: $ id <user>
+```
+<img width="320" alt="image" src="https://user-images.githubusercontent.com/103237142/192061560-d1a51adc-9923-42e9-b5aa-d4c3b64cf66f.png">
+
+<img width="495" alt="image" src="https://user-images.githubusercontent.com/103237142/192066309-9b049813-5a59-4660-a4f0-a5733cf4d3be.png">
+
+<img width="699" alt="image" src="https://user-images.githubusercontent.com/103237142/192066463-43da0599-6a60-4326-b655-a3b42327129e.png">
+
+Chmod & Chown
+-----------------------
+**Chmod**: Change file permission
+
+**Chown**: Change file ownership
+
+
+
+
 
