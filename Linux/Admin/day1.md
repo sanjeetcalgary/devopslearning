@@ -100,6 +100,14 @@ Chmod & Chown
 
 **Chown**: Change file ownership
 
+**What is SUID and how to set it in Linux?**
+
+SUID (Set owner User ID up on execution) is a special type of file permissions given to a file. Normally in Linux/Unix when a program runs, it inherits access permissions from the logged in user. SUID is defined as giving temporary permissions to a user to run a program/file with the permissions of the file owner rather that the user who runs it. In simple words users will get file ownerâ€™s permissions as well as owner UID and GID when executing a file/program/command.
+
+<img width="367" alt="image" src="https://user-images.githubusercontent.com/103237142/192075648-5a66cfdb-5d1b-4e4d-87ff-736b59d5547f.png">
+
+User Management
+----------------------------
 
 
 
