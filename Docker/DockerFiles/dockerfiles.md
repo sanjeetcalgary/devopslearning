@@ -466,9 +466,14 @@ Removing incomplete images (dangling images)
 
 <img width="433" alt="image" src="https://user-images.githubusercontent.com/103237142/192078224-f4b8be22-4b38-4e90-b170-46ea8028cb49.png">
 
-to remove all in one go: `docker rmi -f $(docker images -f dangling=true -q`
+to remove all in one go: `docker rm -f $(docker images -f dangling=true -q`
 
 <img width="523" alt="image" src="https://user-images.githubusercontent.com/103237142/192078325-53e976ac-9497-4cfa-bcdf-43408d00fcb2.png">
+
+Remove all dead containers in one go: `docker rm $(docker ps -a -q)`
+
+<img width="444" alt="image" src="https://user-images.githubusercontent.com/103237142/192109266-53c2c9f2-ef6a-4301-a937-8f240e690a2b.png">
+
 
 Nginx with php
 -------------------------
@@ -551,9 +556,88 @@ server {
 
 <img width="953" alt="image" src="https://user-images.githubusercontent.com/103237142/192108859-36e0c2c3-7de6-4b11-9c56-36c3083ad44d.png">
 
+Multistage dockerfile
+------------------------------
 
+Multistage builds make use of one Dockerfile with multiple FROM instructions. Each of these FROM instructions is a new build stage that can **COPY artifacts from the previous stages**. By going and copying the build artifact from the build stage, you eliminate all the intermediate steps such as downloading of code, installing dependencies, and testing. All these steps create additional layers, and you want to eliminate them from the final image.
 
+The build stage is named by appending AS name-of-build to the FROM instruction. The name of the build stage can be used in a subsequent FROM and COPY command by providing a convenient way to identify the source layer for files brought into the image build. The final image is produced from the last stage executed in the Dockerfile.
 
+```
+FROM node:12.13.0-alpine as build
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+
+FROM nginx
+EXPOSE 3000
+COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY --from=build /app/build /usr/share/nginx/html
+```
+
+**Bilding maven java project**
+
+```
+FROM maven:3-openjdk-18-slim as builder
+COPY mvncode /app 
+WORKDIR /app
+# maven will check pom and download dependencies and jar will be build
+RUN mvn package 
+```
+<img width="474" alt="image" src="https://user-images.githubusercontent.com/103237142/192112091-cef26a7a-e7c8-4a27-9b4b-15392d9adc39.png">
+
+Now we know the path of jar file, thats what is needed for java application
+
+```
+# For java maven app
+FROM maven:3-openjdk-18-slim as builder
+COPY mvncode /app 
+WORKDIR /app
+# maven will check pom and download dependencies and jar will be build
+RUN mvn package 
+# stage-2
+FROM openjdk:19-jdk-alpine
+COPY --from=builder /app/target/my-app-1.0-SNAPSHOT.jar /app.jar
+CMD java -jar /app.jar
+```
+
+<img width="508" alt="image" src="https://user-images.githubusercontent.com/103237142/192112286-a8e505b5-100d-40e3-b089-c1bc2656b4d4.png">
+
+<img width="546" alt="image" src="https://user-images.githubusercontent.com/103237142/192112373-4c8b2ffa-0e3a-48fd-b5f9-0b6ca989976a.png">
+
+<img width="654" alt="image" src="https://user-images.githubusercontent.com/103237142/192112450-269756b9-0761-4dd5-a8b9-e05fb039e62f.png">
+
++ Passing envrionment variable for container outside of docker file
+
+`$ docker run -d --name <contname> -e "varName=value"`
+
+Volume
+-----------------
+VOLUME is used to create a mount point with the specified name.
+
+```
+ARG NODE_VERSION=8.11-slim
+FROM node:$NODE_VERSION
+LABEL "about"="This file is just am example to demonstarte the LABEL"
+ENV workdirectory /home/bhargav
+RUN mkdir /dockerexample
+VOLUME /dockerexample
+COPY package.json .
+RUN ls -ll &&\
+    npm install
+RUN useradd bhargav &&\
+    mkdir -p $workdirectory &&\
+    chown bhargav $workdirectory    
+USER bhargav
+WORKDIR $workdirectory
+ADD index.js .
+RUN ls -l
+EXPOSE 3070
+# command executable and version
+ENTRYPOINT ["node"]
+```
 
 
 
