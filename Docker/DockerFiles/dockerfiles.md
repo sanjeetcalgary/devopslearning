@@ -472,9 +472,84 @@ to remove all in one go: `docker rmi -f $(docker images -f dangling=true -q`
 
 Nginx with php
 -------------------------
+```
+FROM ubuntu
+RUN apt-get update && apt-get install -y \
+    nginx \
+    curl
+# Nginx does come with a default configuration file. However, when we have our own
+# Nginx configuration file, it’s much easier to maintain it outside of a Docker container.
+#Therefore, we are going to create a default config file for Nginx
+COPY nginx /etc/nginx/sites-available/default
+# expose port
+EXPOSE 80/tcp
+# Run nginx
+# the -g option specifies a directive to nginx
+# the daemon off directive will disable the self-daemonizing behavior of nginx
+CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
+```
 
+nginx
 
+```
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    
+    root /usr/share/nginx/html;
+    index index.html index.htm;
 
+    server_name _;
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
+```
+
+<img width="841" alt="image" src="https://user-images.githubusercontent.com/103237142/192107494-e3c5d20c-5387-472b-b37c-5a7ca2879b93.png">
+
+**Serving custom content html page**
+
+```
+FROM ubuntu 
+RUN apt-get update && apt-get install -y \
+    nginx \
+    curl
+# Nginx does come with a default configuration file. However, when we have our own 
+# Nginx configuration file, it’s much easier to maintain it outside of a Docker container. 
+#Therefore, we are going to create a default config file for Nginx 
+COPY nginx /etc/nginx/sites-available/default
+# custom
+COPY fruit /usr/share/nginx/html/
+COPY fruit/index.html /usr/share/nginx/html/index.html
+RUN chmod 777 -R /usr/share/nginx/html
+# expose port
+EXPOSE 80/tcp
+# Run nginx
+# the -g option specifies a directive to nginx
+# the daemon off directive will disable the self-daemonizing behavior of nginx
+CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
+
+```
+
+Nginx
+
+```
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    
+    root /usr/share/nginx/html;
+    index index.html index.htm;
+
+    server_name _;
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
+```
+
+<img width="953" alt="image" src="https://user-images.githubusercontent.com/103237142/192108859-36e0c2c3-7de6-4b11-9c56-36c3083ad44d.png">
 
 
 
