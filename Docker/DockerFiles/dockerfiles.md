@@ -399,10 +399,79 @@ To avoid pop-ups while creating docker image , add in dockerfile
 
 ARG DEBIAN_FRONTEND=noninteractive
 ```
+Creating SSL certificate for Apache i.e. http to https
+--------------------------------------------------------
 
+This involves two steps: generate certificate and configure the server
 
+```
+openssl req -new -newkey rsa:2048 -days 365 -nodes -x509 -keyout server.key -out server.crt
 
+here replace <server> with any term, like
 
+openssl req -new -newkey rsa:2048 -days 365 -nodes -x509 -keyout mydocker.key -out mydocker.crt
+
+```
+Keep on pressing enter till you see `Common Name`, here you have to give IP or DNS name
+
+<img width="676" alt="image" src="https://user-images.githubusercontent.com/103237142/192076634-7b94090d-9ce4-4ac1-94c2-0cc4a5e80462.png">
+
+<img width="377" alt="image" src="https://user-images.githubusercontent.com/103237142/192076647-1a87447b-5617-4a06-a738-e3834e94f1cd.png">
+
+```
+FROM ubuntu
+ARG DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y \
+    curl \ 
+    apache2 \
+    unzip \
+    php \
+    libapache2-mod-php \
+    php-mysql \
+    openssl
+COPY htmlcode /var/www/html
+RUN echo "<?php phpinfo(); ?>" > /var/www/html/page.php  
+COPY mydocker.crt /mydocker.crt 
+COPY mydocker.key /mydocker.key
+COPY ssl.conf /etc/apache2/sites-available/000-default.conf
+RUN chmod -R a+rwx /var/www/html/page.php
+RUN chmod -R a+rwx /var/www/html 
+CMD apachectl -DFOREGROUND
+RUN a2enmod ssl 
+```
+
+Overwrite virtual host file (.conf)
+
+```
+<VirtualHost *:443>
+   ServerName 10.0.0.28
+   DocumentRoot "/var/www/html"
+   SSLEngine on
+   SSLCertificateFile /mydocker.crt
+   SSLCertificateKeyFile /mydocker.key
+</VirtualHost>
+```
+
+<img width="674" alt="image" src="https://user-images.githubusercontent.com/103237142/192077820-bc37d0d7-99ab-4947-869e-a5da7cea236b.png">
+
+Now we can access our conatiner with https
+
+<img width="946" alt="image" src="https://user-images.githubusercontent.com/103237142/192077833-c6b61d52-7714-4007-a5fb-23ce8b719d0d.png">
+
+<img width="946" alt="image" src="https://user-images.githubusercontent.com/103237142/192077841-294d02c5-9aaa-43d0-a2a9-ceefc02f907f.png">
+
+Removing incomplete images (dangling images)
+
+`docker images -f dangling=true`
+
+<img width="433" alt="image" src="https://user-images.githubusercontent.com/103237142/192078224-f4b8be22-4b38-4e90-b170-46ea8028cb49.png">
+
+to remove all in one go: `docker rmi -f $(docker images -f dangling=true -q`
+
+<img width="523" alt="image" src="https://user-images.githubusercontent.com/103237142/192078325-53e976ac-9497-4cfa-bcdf-43408d00fcb2.png">
+
+Nginx with php
+-------------------------
 
 
 
