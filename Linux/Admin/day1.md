@@ -108,6 +108,36 @@ SUID (Set owner User ID up on execution) is a special type of file permissions g
 
 User Management
 ----------------------------
++ Adding a user: `$ useradd <uname>`
++ Check the user added `$ cat /etc/passwd | grep -i <uname>`
+
+<img width="409" alt="image" src="https://user-images.githubusercontent.com/103237142/192125163-dbc6e381-18d8-4cfb-98e2-cfbb40a14b7a.png">
+
+There are 7 enteries sperated with **:**
+
+| User Name|:|Password|:|UserID|:|GroupID|:|Comments|:|Home directory|:|Shell|
+|----------|-|--------|-|------|-|-------|-|--------|-|--------------|-|-----|
+
+using options, we can decide these values, namely
+
+|flag | meaning|
+|-----|--------|
+| -u | UserID |
+| -g | Group |
+| -c | Comments|
+| -d | home directory | 
+| -s | Shell|
+
+<img width="669" alt="image" src="https://user-images.githubusercontent.com/103237142/192125511-2aaf4d32-91a9-4fcb-bcde-8287f5900d42.png">
+
+`$ id <UserName>` : This command will show user detail like UID, Group
+
+<img width="336" alt="image" src="https://user-images.githubusercontent.com/103237142/192125555-aa0324aa-1338-4e45-b2b9-9d0d069ed602.png">
+
++ To create a group : `$ groupadd <groupName>`
++ To check groups: `$ cat /etc/group`
+
+Changing the password as root user or logged in user ` $ passwd <Uname>`
 
 
 
