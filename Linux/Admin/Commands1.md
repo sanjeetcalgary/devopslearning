@@ -164,6 +164,65 @@ File Types
 | **p** | named pipe | allow communication between two local processes. They can be created by the mknod command and removed with the rm command. |
 | **I** | symbolic link | an administrator can assign a file or directory multiple identities. Symbolic link can be though of as a pointer to an original file.|
 
+**Cp**
+
+used to copy files or group of files or directory. cp [OPTION] Source Destination
+
++ Two file names: If the command contains two file names, then it copy the contents of 1st file to the 2nd file. If the 2nd file doesn’t exist, then first it creates one and content is copied to it. But if it existed then it is simply overwritten without any warning. 
+
+` cp Src_file Dest_file `
+
++ One or more arguments : If the command has one or more arguments, specifying file names and following those arguments, an argument specifying directory name then this command copies each source file to the destination directory with the same name, created if not existed but if already existed then it will be overwritten
+
+`cp Src_file1 Src_file2 Src_file3 Dest_directory`
+
++ Two directory names : If the command contains two directory names, cp copies all files of the source directory to the destination directory, creating any files or directories needed. This mode of operation requires an additional option, typically R, to indicate the recursive copying of directories
+
+`cp -R Src_directory Dest_directory`
+
+`-p option will preserve file permission and timestamp`
+
+<img width="676" alt="image" src="https://user-images.githubusercontent.com/103237142/192603170-79dfbb59-6697-4f92-a705-3eff78e95143.png">
+
+<img width="504" alt="image" src="https://user-images.githubusercontent.com/103237142/192603805-4f900320-5e91-4edd-b8d8-a3808cb83c5c.png">
+
+<img width="540" alt="image" src="https://user-images.githubusercontent.com/103237142/192604048-ebebaa5d-dc09-4abc-abf5-93586cba9198.png">
+
+<img width="372" alt="image" src="https://user-images.githubusercontent.com/103237142/192604281-2263f174-759b-4a9d-b817-f06c4324c370.png">
+
+**Find & Exec**
+
+used to find files and directories and perform subsequent operations on them. It supports searching by file, folder, name, creation date, modification date, owner and permissions. By using the ‘-exec’ other UNIX commands can be executed on files or folders found. 
+
++ Find a file with specific name [ use ` -name`]
+
+` $ find <location> -name <filename>` : using -iname we can make case insensitive
+
+<img width="335" alt="image" src="https://user-images.githubusercontent.com/103237142/192623316-6034d3b0-c9aa-48c0-b1be-50463e6f46e1.png">
+
++ Find a file with specific name [ use ` -name`]
+
+` find . -type d -name <dirName>`
+
+<img width="571" alt="image" src="https://user-images.githubusercontent.com/103237142/192623947-8971f4dd-290c-4845-9a86-9c3f5e205671.png">
+
++ Find files with specific permission or without specific permission (using ! )
+
+` find . -type f -perm 0777`
+
+`find / -type f ! -perm 777`
+
+<img width="369" alt="image" src="https://user-images.githubusercontent.com/103237142/192624446-d0be1985-61df-47b6-9266-35e5419abda9.png">
+
+<img width="371" alt="image" src="https://user-images.githubusercontent.com/103237142/192624748-ab009f99-d32a-4e57-af88-7e812158728d.png">
+
+<img width="448" alt="image" src="https://user-images.githubusercontent.com/103237142/192625313-67d5f015-762a-4ccf-8973-771954294d69.png">
+
+```
+find . -type f -name "*.log" -exec cat {} \; >> newfile.txt
+```
+
+Note: put name in double quotes
 
 
 
