@@ -129,6 +129,38 @@ Functions
 $ terraform console: try out defined functions
 
 
+https://github.com/zealvora/terraform-beginner-to-advanced-resource/blob/master/Section%202%20-%20Read%2C%20Generate%2C%20Modify%20Congiruations/functions.md
+
+https://www.terraform.io/language/functions/matchkeys
+
+Data source
+--------------------
+<img width="726" alt="image" src="https://user-images.githubusercontent.com/103237142/192596960-9d150077-ce10-4b7a-a717-a5d31e7eda51.png">
+
+<img width="702" alt="image" src="https://user-images.githubusercontent.com/103237142/192598963-4b6beafd-ce7b-42f5-ad9b-b714f9f10c99.png">
+
+Debugging
+----------------------
+<img width="520" alt="image" src="https://user-images.githubusercontent.com/103237142/192599971-81e5a37a-7bc1-4053-b6ce-2b4512a1b91b.png">
+
+<img width="356" alt="image" src="https://user-images.githubusercontent.com/103237142/192600263-bd68a703-9c81-4abc-9bb2-f55fcf14086f.png">
+
+<img width="590" alt="image" src="https://user-images.githubusercontent.com/103237142/192600497-10462e86-fd34-4b33-a191-367778b90b34.png">
+
+<img width="536" alt="image" src="https://user-images.githubusercontent.com/103237142/192600647-76f2fa9d-0a3b-48a3-ab02-3607b7fef3d0.png">
+
+Format
+--------------------
+<img width="514" alt="image" src="https://user-images.githubusercontent.com/103237142/192600979-c7bfc3f6-bece-4aa6-b3af-8be4b5136980.png">
+
+<img width="439" alt="image" src="https://user-images.githubusercontent.com/103237142/192601043-264e69a2-bc7b-46b2-abdb-bb22a7fec58e.png">
+
+Validating Config file
+---------------------------
+<img width="713" alt="image" src="https://user-images.githubusercontent.com/103237142/192601457-b949dd96-a8d3-48e9-ad65-90af55a3c021.png">
+
+<img width="545" alt="image" src="https://user-images.githubusercontent.com/103237142/192601768-1a98455d-e367-443e-aeb7-cbc63faf8a92.png">
+
 
 
 
