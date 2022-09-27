@@ -21,4 +21,45 @@ File System
 
 <img width="532" alt="image" src="https://user-images.githubusercontent.com/103237142/192409255-1a921fed-14ad-4e6e-96ec-6fa6b268f964.png">
 
-+ 2>&
++ **&>** ( all in same file)
+
+<img width="475" alt="image" src="https://user-images.githubusercontent.com/103237142/192409881-2238c641-f48b-41c8-8417-8aa21594592f.png">
+
+**Cut**
+
+cutting out the sections from each line of files and writing the result to standard output
+
+`cut <option> <file>`
+
+`cut -d 'delimiter' -f<fieldnumber> filename`
+
+<img width="341" alt="image" src="https://user-images.githubusercontent.com/103237142/192410541-43eca565-1d58-40d8-870b-44edb976d2c5.png">
+
+`cut -b pos,pos,... filename `
+
+<img width="324" alt="image" src="https://user-images.githubusercontent.com/103237142/192410728-30cf2170-9989-4f67-a28a-31706a7e2c9a.png">
+
+`cut -b <block interval> filename`
+
+<img width="325" alt="image" src="https://user-images.githubusercontent.com/103237142/192410808-f447428d-584b-4f3f-b74f-6eecff1bf1e4.png">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
