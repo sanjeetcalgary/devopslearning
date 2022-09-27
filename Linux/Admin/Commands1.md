@@ -151,7 +151,18 @@ Compress and Decompress files
 
 <img width="496" alt="image" src="https://user-images.githubusercontent.com/103237142/192562876-ea3a958e-d48f-40ec-b6ca-3accb0a0e757.png">
 
-**Cp**
+File Types
+------------------------
+
+| Symbol | Name | Description|
+|--------|------|------------|
+| **-** | regular file | different files such us text files, images, binary files, shared libraries, etc. You can create a regular file with the touch command |
+| **d** | directory | folder, Directory can be created with the mkdir command |
+| **c** | character device file | Character and block device files allow users and programs to communicate with hardware peripheral devices. |
+| **b** | block device file | Block devices are similar to character devices. They mostly govern hardware as hard drives, memory, etc. |
+| **s** | local socket file | sockets are used for communication between processes. Generally, they are used by services such as X windows, syslog and etc. |
+| **p** | named pipe | allow communication between two local processes. They can be created by the mknod command and removed with the rm command. |
+| **I** | symbolic link | an administrator can assign a file or directory multiple identities. Symbolic link can be though of as a pointer to an original file.|
 
 
 
