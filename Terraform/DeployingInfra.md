@@ -122,6 +122,13 @@ Local Values
 Functions
 ---------------------------
 
+<img width="703" alt="image" src="https://user-images.githubusercontent.com/103237142/192593309-c5caed72-6a70-4edf-8814-387b9a63cd36.png">
+
+<img width="699" alt="image" src="https://user-images.githubusercontent.com/103237142/192593419-61e225b6-3066-452e-a480-7229bf72249b.png">
+
+$ terraform console: try out defined functions
+
+
 
 
 
