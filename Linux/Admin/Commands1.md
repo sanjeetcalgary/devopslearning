@@ -224,14 +224,129 @@ find . -type f -name "*.log" -exec cat {} \; >> newfile.txt
 
 Note: put name in double quotes
 
+**mv**
+
+mv stands for move. mv is used to move one or more files or directories from one place to another in a file system like UNIX. It has two distinct functions: 
+
+(i) It renames a file or folder. 
+
+(ii) It moves a group of files to a different directory.
+
+<img width="592" alt="image" src="https://user-images.githubusercontent.com/103237142/192875528-5ad08be3-34d8-47a3-b15b-09343b41a7d6.png">
+
+**rm**
+
+rm stands for remove here. rm command is used to remove objects such as files, directories, symbolic links and so on from the file system like UNIX.
+
+<img width="345" alt="image" src="https://user-images.githubusercontent.com/103237142/192876201-d67c0661-b722-4dd2-ad3b-4893e291de71.png">
+
+```
+Search in Vim:
+
+To search in Vim you must be in normal mode
+
+To search forward, press / and to search backward press ?, type the search pattern and press Enter to run the search:
+
+Press n to search for the next occurrence or uppercase N to search in the opposite direction.
+
+The basic steps to perform a search in Vim are as follows:
+
+i. Press /.
+ii. Type the search pattern.
+iii. Press Enter to perform the search.
+iv. Press n to find the next occurrence or N to find the previous occurrence.
+
+To search for a whole word, start the search by pressing / or ?, type \< to mark the beginning of a word, enter the search pattern, 
+type \> to mark the end of a word, and hit Enter to perform the search.
+
+For example, to search for “gnu” you would use /\<gnu\>:
+
+```
+
+**ls**
+
+command lists files and directories within the file system
+
+-l : with description
+-a : hidden files
+-s or --sort=size
+-t or --sort=time
+
+-r : output in reverse order
+
+<img width="438" alt="image" src="https://user-images.githubusercontent.com/103237142/192881200-d376b9a8-b05e-46fe-83c6-1dfbc3c116a5.png">
+
+<img width="436" alt="image" src="https://user-images.githubusercontent.com/103237142/192881242-f4e90650-24e6-41a3-a3f6-20505877826a.png">
+
+<img width="373" alt="image" src="https://user-images.githubusercontent.com/103237142/192881561-902b4264-6c78-4ca8-9b5d-b61f4055bd14.png">
+
+<img width="360" alt="image" src="https://user-images.githubusercontent.com/103237142/192881611-46ce259c-05e9-4eb0-ab96-b4f584671b7c.png">
+
+<img width="363" alt="image" src="https://user-images.githubusercontent.com/103237142/192881651-4de1e540-c699-4ad0-8019-14ff31cdd8d2.png">
+
+**file timestamp**
+
+•	Access timestamp (atime): which indicates the last time a file was accessed. `$ ls -lu [filename]`
+•	Modified timestamp (mtime): which is the last time a file’s contents were modified. `$ ls -l [filename]`
+•	Change timestamp (ctime): which refers to the last time some metadata related to the file was changed `$ ls -lc [filename]`
+
+<img width="354" alt="image" src="https://user-images.githubusercontent.com/103237142/192882120-98ea9ae2-26f4-482d-b192-3214a61a61a2.png">
+
+<img width="366" alt="image" src="https://user-images.githubusercontent.com/103237142/192882259-b7763f02-c345-429c-9e60-808624731578.png">
+
+**cat**
+
+It reads data from the file and gives their content as output. It helps us to create, view, concatenate files
+
++ To view contents of a file preceding with line numbers. Command: `$cat -n filename`
++ Create a file `$ cat > filename`
++ append the contents of one file to the end of another file `$cat file1 >> file2`
++ display content in reverse order using tac command.  `$tac filename`
++ file has a lot of content and can’t fit in the terminal.  `$cat "filename" | more`
+
+<img width="674" alt="image" src="https://user-images.githubusercontent.com/103237142/192883248-5cce1f60-cc31-438e-a160-9af60ef5adff.png">
+
+<img width="677" alt="image" src="https://user-images.githubusercontent.com/103237142/192883546-5dc8b204-ad88-4e23-9e02-16e81fc59104.png">
+
+<img width="682" alt="image" src="https://user-images.githubusercontent.com/103237142/192883694-3d88db47-d968-41ee-bfec-ccb676c9a921.png">
+
+**wc**
+
+wc stands for word count. As the name implies, it is mainly used for counting purpose.
+
+-w : number of words present in a file
+-m : count of characters from a file.
+
+<img width="267" alt="image" src="https://user-images.githubusercontent.com/103237142/192884015-b1a14d73-6cf7-4b4c-9a79-ac755f4f03dc.png">
+
+**Links**
+
+Creating links is a kind of shortcuts to access a file. Links allow more than one file name to refer to the same file, elsewhere. 
+
+1.	Soft Link or Symbolic links: Symbolic links are not updated (they merely contain a string which is the path name of its target)
+
+`$ ln  -s [original filename] [link name] `
+
+<img width="472" alt="image" src="https://user-images.githubusercontent.com/103237142/192887203-eb4b0c03-f736-48b8-b14e-2cc1dd7e5cb8.png">
 
 
+2.	Hard Links: hard links always refer to the source, even if moved or removed.
 
+`$ ln  [original filename] [link name] `
 
+<img width="415" alt="image" src="https://user-images.githubusercontent.com/103237142/192887999-657c7f48-0b27-4caa-8f3a-daaa8223b534.png">
 
+When you change content, link files will auto-update
 
+<img width="432" alt="image" src="https://user-images.githubusercontent.com/103237142/192888194-64cbc856-7651-40eb-a3d3-ca188b50d767.png">
 
+When we move sourcefile, softlink fails but hardlink works
 
+<img width="439" alt="image" src="https://user-images.githubusercontent.com/103237142/192888433-e685c26d-d7cb-47b2-bf30-46f7cdc348c0.png">
+
+When we delete source file, softlink fails but hardlink works
+
+<img width="613" alt="image" src="https://user-images.githubusercontent.com/103237142/192888657-f8e27d73-1b20-4aab-ad00-480574670f22.png">
 
 
 
