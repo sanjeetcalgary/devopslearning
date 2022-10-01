@@ -418,5 +418,30 @@ date | awk '{print $2,$3,$6}'
 
 `awk -F: '{print $1,$6}' /etc/passwd`
 
+ Self
+ -----------
+ 
+ $ git --version | awk -F ' ' '{print $3}'
+ 
+ <img width="426" alt="image" src="https://user-images.githubusercontent.com/103237142/193377551-7d62a569-b8da-4819-a3b8-26d8bb6a79b2.png">
+
+<img width="636" alt="image" src="https://user-images.githubusercontent.com/103237142/193377921-2f6d217e-e2a5-4b1e-a020-1fd06247f2c3.png">
+
+task: i have a file like
+
+```
+name  company jl  project client  city
+sanjeet Infosys 5 BoFa  Mortgage  Calgary
+Rakesh  Amerifirst  6 Automation  Client  Charlette
+Balaji  TCS Churchill 7 SPOC  BA  Chennai
+```
+
+I want to retrieve only the city for each
+
+<img width="365" alt="image" src="https://user-images.githubusercontent.com/103237142/193378516-6146784d-0b98-45c1-ad94-879ef9ddfbf7.png">
+
+<img width="521" alt="image" src="https://user-images.githubusercontent.com/103237142/193378571-442c8664-4eec-455d-a8a1-59593e231030.png">
+
+
 
 
