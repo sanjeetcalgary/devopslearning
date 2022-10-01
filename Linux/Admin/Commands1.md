@@ -349,9 +349,74 @@ When we delete source file, softlink fails but hardlink works
 <img width="613" alt="image" src="https://user-images.githubusercontent.com/103237142/192888657-f8e27d73-1b20-4aab-ad00-480574670f22.png">
 
 
+Read file Content
+------------------------
++ By opening the file: vi / vim / nano
++ Without opening: cat, more, less
++ With condition: more, tail, grep, awk, sed
+
+**AWK**
+
+1. AWK Operations: 
+
+(a) Scans a file line by line 
+
+(b) Splits each input line into fields 
+
+(c) Compares input line/fields to pattern 
+
+(d) Performs action(s) on matched lines 
+
+2. Useful For: 
+
+(a) Transform data files 
+
+(b) Produce formatted reports 
+
+3. Programming Constructs: 
+
+(a) Format output lines 
+
+(b) Arithmetic and string operations
+
+(c) Conditionals and loops 
+
+```
+$ awk options program file
+
+$ awk [options] ‘[selection _criteria] {action }' input-file
+
+Options:
+  -F fs     To specify a file separator.
+  -f file     To specify a file that contains awk script
+  -v var=value     To declare a variable.
+
+$0: Represents the entire line of text.
+$1: Represents the first field.
+$2: Represents the second field.
+$7: Represents the seventh field.
+$45: Represents the 45th field.
+$NF: Stands for “number of fields,” and represents the last field.
+$NR: It will print line or record number
+```
+
+To define an awk script, use braces surrounded by single quotation marks
 
 
+date | awk '{print $2,$3,$6}'
 
++ OFS: (output field separator) variable to put a separator between the output `date | awk 'OFS="/" {print$2,$3,$6}'`
+
+  enclose the command in single quotes ('), not curly braces ({}): `date | awk 'OFS="-" {print$2,$3,$6}'`
+
++ BEGIN rule is executed once before any text processing starts. In fact, it’s executed before awk even reads any text. An END rule is executed after all processing has completed. You can have multiple BEGIN and END rules, and they’ll execute in order.
++ BEGIN rule has its own set of actions enclosed within its own set of curly braces ({}).
+
+`who | awk 'BEGIN {print "Active Sessions"} {print $1,$4}'`
+
++ Field Seperator :  use that file and the -F (separator string) option to tell awk to use the colon (:) as the separator. 
+
+`awk -F: '{print $1,$6}' /etc/passwd`
 
 
 
