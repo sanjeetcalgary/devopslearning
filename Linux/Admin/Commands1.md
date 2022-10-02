@@ -442,6 +442,32 @@ I want to retrieve only the city for each
 
 <img width="521" alt="image" src="https://user-images.githubusercontent.com/103237142/193378571-442c8664-4eec-455d-a8a1-59593e231030.png">
 
+**tr**
+
++ utility for translating or deleting characters
+
+`$ tr [OPTION] SET1 [SET2]`
+
+ convert lower case to upper case
+ 
+ $cat geekfile | tr “[:lower:]” “[:upper:]”
+ 
+ + Giving a file as input
+
+`tr [options] [SET1] [SET2] <inputFile`
+
+translate white-space to tabs
+
+$ echo "Welcome To GeeksforGeeks" | tr [:space:] '\t'
+
+remove all the digits from the string, use
+
+$ echo "my ID is 73535" | tr -d [:digit:]
+
+<img width="532" alt="image" src="https://user-images.githubusercontent.com/103237142/193460096-01b473c6-57ac-4d7c-81da-32a53d049a9f.png">
+
+<img width="542" alt="image" src="https://user-images.githubusercontent.com/103237142/193460195-5edb4e55-4321-41bf-811e-4ea1d11648b6.png">
+
 
 
 
