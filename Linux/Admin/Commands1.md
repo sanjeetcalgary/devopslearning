@@ -287,7 +287,9 @@ command lists files and directories within the file system
 **file timestamp**
 
 •	Access timestamp (atime): which indicates the last time a file was accessed. `$ ls -lu [filename]`
+
 •	Modified timestamp (mtime): which is the last time a file’s contents were modified. `$ ls -l [filename]`
+
 •	Change timestamp (ctime): which refers to the last time some metadata related to the file was changed `$ ls -lc [filename]`
 
 <img width="354" alt="image" src="https://user-images.githubusercontent.com/103237142/192882120-98ea9ae2-26f4-482d-b192-3214a61a61a2.png">
